@@ -1,9 +1,4 @@
-import {
-  Platform,
-  NativeModules,
-  findNodeHandle,
-  type TextInput
-} from "react-native";
+import { Platform, NativeModules, findNodeHandle, type TextInput } from 'react-native';
 
 interface InputPlaceholderEllipsizedInterface {
   fixPlaceholderEllipsize(viewTag: number): void;
@@ -11,27 +6,26 @@ interface InputPlaceholderEllipsizedInterface {
 
 const LINKING_ERROR =
   `The package 'react-native-input-placeholder-ellipsized' doesn't seem to be installed. Make sure: \n\n` +
-  "- You rebuilt the app after installing the package\n";
+  '- You rebuilt the app after installing the package\n';
 
 // Get reference to the native module
-const InputPlaceholderEllipsizedModule =
-  NativeModules.InputPlaceholderEllipsized
-    ? (NativeModules.InputPlaceholderEllipsized as InputPlaceholderEllipsizedInterface)
-    : new Proxy(
-        {
-          fixPlaceholderEllipsize: (_: number) => {
-            throw new Error(LINKING_ERROR);
-          }
+const InputPlaceholderEllipsizedModule = NativeModules.InputPlaceholderEllipsized
+  ? (NativeModules.InputPlaceholderEllipsized as InputPlaceholderEllipsizedInterface)
+  : new Proxy(
+      {
+        fixPlaceholderEllipsize: (_: number) => {
+          throw new Error(LINKING_ERROR);
         },
-        {
-          get(target, prop) {
-            if (prop === "fixPlaceholderEllipsize") {
-              return target.fixPlaceholderEllipsize;
-            }
-            throw new Error(LINKING_ERROR);
+      },
+      {
+        get(target, prop) {
+          if (prop === 'fixPlaceholderEllipsize') {
+            return target.fixPlaceholderEllipsize;
           }
-        }
-      );
+          throw new Error(LINKING_ERROR);
+        },
+      },
+    );
 
 /**
  * Fixes the placeholder ellipsize behavior for a TextInput component on Android.
@@ -40,11 +34,9 @@ const InputPlaceholderEllipsizedModule =
  *
  * @param textInputRef - Reference to the TextInput component
  */
-export const fixTextInputPlaceholder = (
-  textInputRef: TextInput | null
-): void => {
+export const fixTextInputPlaceholder = (textInputRef: TextInput | null): void => {
   // Only run on Android
-  if (Platform.OS !== "android" || !textInputRef) {
+  if (Platform.OS !== 'android' || !textInputRef) {
     return;
   }
 
@@ -54,4 +46,8 @@ export const fixTextInputPlaceholder = (
     // Call the native module to fix this specific TextInput
     InputPlaceholderEllipsizedModule.fixPlaceholderEllipsize(viewTag);
   }
+};
+
+export default {
+  fixTextInputPlaceholder,
 };
