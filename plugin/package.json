@@ -1,0 +1,27 @@
+{
+  "name": "react-native-input-placeholder-ellipsized-plugin",
+  "version": "0.2.0",
+  "description": "Expo Config Plugin for react-native-input-placeholder-ellipsized",
+  "main": "build/withInputPlaceholderEllipsized.js",
+  "types": "src/withInputPlaceholderEllipsized.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "expo",
+    "react-native",
+    "config-plugin",
+    "android",
+    "textinput",
+    "ellipsize"
+  ],
+  "peerDependencies": {
+    "expo": ">=45.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.0",
+    "expo": ">=45.0.0",
+    "@expo/config-plugins": "^5.0.0"
+  }
+}

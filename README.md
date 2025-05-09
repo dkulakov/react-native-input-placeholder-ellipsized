@@ -26,6 +26,24 @@ For React Native < 0.60, you will need to manually link the module:
 react-native link react-native-input-placeholder-ellipsized
 ```
 
+### Expo
+
+This package is compatible with Expo development builds. Add the config plugin to your `app.json` or `app.config.js`:
+
+```json
+{
+  "expo": {
+    "plugins": ["react-native-input-placeholder-ellipsized"]
+  }
+}
+```
+
+Then, create a new build with EAS:
+
+```sh
+eas build --profile development --platform android
+```
+
 ## Usage
 
 ```jsx
@@ -67,4 +85,4 @@ Another approach to solve this issue is to manually truncate the placeholder tex
 
 ## License
 
-MIT 
+MIT

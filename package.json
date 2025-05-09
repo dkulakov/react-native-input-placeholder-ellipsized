@@ -1,6 +1,6 @@
 {
   "name": "react-native-input-placeholder-ellipsized",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React Native module to fix TextInput placeholder ellipsize on Android",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
@@ -11,6 +11,7 @@
     "src",
     "lib",
     "android",
+    "plugin",
     "!android/build",
     "!**/__tests__",
     "!**/__fixtures__",
@@ -27,7 +28,8 @@
     "android",
     "textinput",
     "ellipsize",
-    "placeholder"
+    "placeholder",
+    "expo"
   ],
   "repository": {
     "type": "git",
@@ -58,5 +60,15 @@
       "module",
       "typescript"
     ]
+  },
+  "expo": {
+    "name": "react-native-input-placeholder-ellipsized",
+    "version": "0.2.0",
+    "platforms": [
+      "android"
+    ]
+  },
+  "exportedModules": {
+    "plugin": "plugin"
   }
 }
