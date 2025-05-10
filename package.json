@@ -1,6 +1,6 @@
 {
   "name": "react-native-input-placeholder-ellipsized",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "This module addresses a common issue in React Native TextInput components on Android, where placeholder text doesn't correctly truncate with ellipsis at the end when it's too long to fit in the available space.",
   "source": "./src/index.ts",
   "main": "./lib/module/index.js",
