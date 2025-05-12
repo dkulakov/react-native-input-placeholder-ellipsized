@@ -24,8 +24,6 @@ export default function App() {
 
   useEffect(() => {
     [input1Ref, input2Ref, input3Ref].forEach((ref) => {
-      console.log('ref', ref);
-
       if (ref.current) {
         fixPlaceholderEllipsize(ref.current);
       }

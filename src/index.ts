@@ -26,7 +26,6 @@ export function fixPlaceholderEllipsize(textInputRef: TextInput | null): void {
 
   const viewTag = findNodeHandle(textInputRef);
   if (viewTag !== null) {
-    console.log('viewTag', viewTag);
     InputPlaceholderEllipsized.fixPlaceholderEllipsize(viewTag);
   }
 }
